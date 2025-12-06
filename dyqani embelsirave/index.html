@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyqan Embëlsirash - Menaxhimi i Çmimeve</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-candy-cane"></i> Dyqan Embëlsirash</h1>
+            <p class="tagline">Menaxhoni çmimet e produkteve tuaja të ëmbëla</p>
+        </header>
+        
+        <div class="app-description">
+            <h2><i class="fas fa-info-circle"></i> Rreth Aplikacionit</h2>
+            <p>Ky është një aplikacion i thjeshtë për menaxhimin e çmimeve në një dyqan embëlsirash. Mund të shtoni, modifikoni, fshini dhe shihni çmimet e produkteve. Të dhënat ruhen lokal në shfletuesin tuaj (localStorage).</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="panel">
+                <h2><i class="fas fa-plus-circle"></i> Shto Produkt të Ri</h2>
+                <form id="sweet-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-cookie-bite"></i> Emri i Embëlsirës</label>
+                        <input type="text" id="name" placeholder="Shkruani emrin e embëlsirës" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category"><i class="fas fa-tags"></i> Kategoria</label>
+                        <select id="category" required>
+                            <option value="">Zgjidhni kategorinë</option>
+                            <option value="çokollatë">Çokollatë</option>
+                            <option value="biskota">Biskota</option>
+                            <option value="ëmbëlsira">Ëmbëlsira tradicionale</option>
+                            <option value="karamele">Karamele</option>
+                            <option value="torta">Torta</option>
+                            <option value="akullore">Akullore</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price"><i class="fas fa-money-bill-wave"></i> Çmimi (në Lekë)</label>
+                        <input type="number" id="price" min="0" step="10" placeholder="Shkruani çmimin" required>
+                    </div>
+                    
+                    <button type="submit" id="add-btn">
+                        <i class="fas fa-plus"></i> Shto Embëlsirën
+                    </button>
+                </form>
+                
+                <div class="total-section">
+                    <div class="total-text">Vlera totale e produkteve:</div>
+                    <div class="total-value" id="total-value">0 Lekë</div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2><i class="fas fa-list"></i> Lista e Embëlsirave</h2>
+                <div class="sweets-list" id="sweets-list">
+                    <!-- Lista e produkteve do të shfaqet këtu -->
+                    <div class="empty-message">
+                        <i class="fas fa-ice-cream"></i>
+                        <p>Asnjë produkt i shtuar ende. Shtoni produktin tuaj të parë!</p>
+                    </div>
+                </div>
+                
+                <div class="total-section">
+                    <div class="total-text">Numri i produkteve:</div>
+                    <div class="total-value" id="total-count">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Aplikacion i thjeshtë për menaxhimin e çmimeve në dyqan embëlsirash | Të dhënat ruhen në localStorage</p>
+            <p>© 2023 Dyqan Embëlsirash</p>
+        </footer>
+        
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
